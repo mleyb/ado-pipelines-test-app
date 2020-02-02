@@ -18,6 +18,7 @@ steps:
 
 - task: PythonScript@0
   inputs:
+    failOnStderr: true
     scriptSource: 'inline'
     script: |
       import requests
@@ -25,4 +26,6 @@ steps:
       r = requests.get('https://api.github.com/events')
 
       print(r.status_code)
+
+      exit(1)
 
