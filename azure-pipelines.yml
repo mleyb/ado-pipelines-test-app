@@ -16,3 +16,11 @@ steps:
     targetType: 'inline'
     script: 'pip install requests'
 
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: |
+      import requests
+      
+      r = requests.get('https://api.github.com/events')
+
